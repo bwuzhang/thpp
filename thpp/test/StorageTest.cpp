@@ -48,7 +48,7 @@ void test_free(void* ctx, void* /*ptr*/) {
   auto myCtx = (TestContext*) ctx;
   myCtx->nFree++;
 }
-
+#ifndef NO_FOLLY
 TEST(Storage, CustomAllocator) {
   THAllocator testAlloc = {
     &test_malloc, &test_realloc, &test_free
@@ -83,5 +83,6 @@ TEST(Storage, CustomAllocator) {
   EXPECT_EQ(ctx.nMalloc, 1);
 
 }
+#endif
 
 }}  // namespaces
