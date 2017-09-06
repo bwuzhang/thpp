@@ -187,18 +187,18 @@ template <> struct TensorOps<Tensor<real>> {
     return THTensor_(addr)(r, beta, t, alpha, vec1, vec2);
   }
   static void _max(THTensor* values, THLongTensor* indices,
-                   THTensor* t, int dim) {
-    return THTensor_(max)(values, indices, t, dim);
+                   THTensor* t, int dim, int keepdim) {
+    return THTensor_(max)(values, indices, t, dim, keepdim);
   }
   static void _min(THTensor* values, THLongTensor* indices,
-                   THTensor* t, int dim) {
-    return THTensor_(min)(values, indices, t, dim);
+                   THTensor* t, int dim, int keepdim) {
+    return THTensor_(min)(values, indices, t, dim, keepdim);
   }
-  static void _sum(THTensor* r, THTensor* t, int dim) {
-    return THTensor_(sum)(r, t, dim);
+  static void _sum(THTensor* r, THTensor* t, int dim, int keepdim) {
+    return THTensor_(sum)(r, t, dim, keepdim);
   }
-  static void _prod(THTensor* r, THTensor* t, int dim) {
-    return THTensor_(prod)(r, t, dim);
+  static void _prod(THTensor* r, THTensor* t, int dim, int keepdim) {
+    return THTensor_(prod)(r, t, dim, keepdim);
   }
   static void _cumsum(THTensor* r, THTensor* t, int dim) {
     return THTensor_(cumsum)(r, t, dim);
