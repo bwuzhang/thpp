@@ -52,4 +52,4 @@ make
 ctest
 
 # Install
-make install
+sudo make install
